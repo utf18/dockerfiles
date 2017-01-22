@@ -1,3 +1,7 @@
+Basic Docker Usage:
+docker run --rm -t benst/wrk -t10 -c4000 -d30s http://example.com
+
+
 https://github.com/wg/wrk
 
 wrk - a HTTP benchmarking tool
