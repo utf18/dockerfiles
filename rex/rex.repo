@@ -1,0 +1,4 @@
+[rex]
+name=Fedora \$releasever - \$basearch - Rex Repository
+baseurl=https://rex.linux-files.org/CentOS/\$releasever/rex/\$basearch/
+enabled=1
