@@ -2,7 +2,7 @@ FROM centos:7
 MAINTAINER Benjamin Stein <b.stein@diffus.org>
 RUN rpm --import https://rex.linux-files.org/RPM-GPG-KEY-REXIFY-REPO.CENTOS6
 ADD rex.repo /etc/yum.repos.d/
-yum makecache && \ 
+RUN yum makecache && \ 
 yum install -y rex \
 ca-certificates \
 cpanminus && \
