@@ -2,9 +2,22 @@ FROM centos:7
 MAINTAINER Benjamin Stein <b.stein@diffus.org>
 RUN rpm --import https://rex.linux-files.org/RPM-GPG-KEY-REXIFY-REPO.CENTOS6
 ADD rex.repo /etc/yum.repos.d/
-RUN yum makecache && \ 
-yum install -y rex \
+RUN yum makecache && \
+yum install -y \
+gcc \
+make \
+git \
+expat \
+expat-devel \
+curl \
+wget \
+which \
+net-tools \
+openssh \
+openssl \
+openssl-devel \
 ca-certificates \
+rex \
 cpanminus && \
 cpanm -n Array::Diff \
 Moose \
@@ -21,6 +34,10 @@ JSON::XS Crypt::OpenSSL::Random \
 Crypt::OpenSSL::RSA \
 LWP::UserAgent \
 LWP::Protocol::https && \
-yum clean all && \
+yum remove -y expat-devel \
+openssl-devel \
+gcc \
+make && \
+yum clean all -y && \
 rm -rf .cpanm
 WORKDIR /root/rexfiles
