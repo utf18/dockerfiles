@@ -1,23 +1,12 @@
 FROM centos:7
 MAINTAINER Benjamin Stein <b.stein@diffus.org>
-RUN yum update -y && \
-yum install -y \
-gcc \
-make \
-git \
-expat \
-expat-devel \
-curl \
-wget \
-which \
-net-tools \
-openssh \
-openssl \
-openssl-devel \
+RUN rpm --import https://rex.linux-files.org/RPM-GPG-KEY-REXIFY-REPO.CENTOS6
+ADD rex.repo /etc/yum.repos.d/
+yum makecache && \ 
+yum install -y rex \
 ca-certificates \
 cpanminus && \
-cpanm -n Rex \
-Array::Diff \
+cpanm -n Array::Diff \
 Moose \
 MooseX::Params::Validate \
 namespace::autoclean \
@@ -31,5 +20,7 @@ IPC::Lite Mojolicious \
 JSON::XS Crypt::OpenSSL::Random \
 Crypt::OpenSSL::RSA \
 LWP::UserAgent \
-LWP::Protocol::https
+LWP::Protocol::https && \
+yum clean all && \
+rm -rf .cpanm
 WORKDIR /root/rexfiles
