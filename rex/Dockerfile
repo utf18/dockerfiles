@@ -18,7 +18,7 @@ openssl \
 openssl-devel \
 ca-certificates \
 perl-DateTime \
-perl-File-Flurp \
+perl-File-Slurp \
 rex \
 cpanminus && \
 cpanm -n Array::Diff \
