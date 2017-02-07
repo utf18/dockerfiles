@@ -36,10 +36,6 @@ JSON::XS Crypt::OpenSSL::Random \
 Crypt::OpenSSL::RSA \
 LWP::UserAgent \
 LWP::Protocol::https && \
-yum remove -y expat-devel \
-openssl-devel \
-gcc \
-make && \
 yum clean all -y && \
 rm -rf .cpanm
 WORKDIR /root/rexfiles
