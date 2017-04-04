@@ -1,0 +1,4 @@
+before you can use the slaves you have to:
+
+1. create a user with the name: agent within the Jenkins user menu
+2. install the swarm plugin in the Jenkins master
