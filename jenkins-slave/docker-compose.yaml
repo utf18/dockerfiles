@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  master:
+    image: jenkins
+    container_name: jenkins
+    volumes:
+#     - "/var/docker/jenkins/data:/var/lib/jenkins/"
+      - "jenkins:/var/lib/jenkins"
+
+    ports:
+      - 8080:8080
+      - 50000:50000
+
+  slave:
+    image: benst/jenkins-slave
+    command: -master http://jenkins:8080 -username agent -password foobar1234 -name slave
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
+volumes:
+  jenkins:
