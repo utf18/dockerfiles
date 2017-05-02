@@ -1,0 +1,10 @@
+version: '2'
+# data is where the downloads live
+# config is where the configs live
+services:
+  jd:
+    image: "benst/headless-jd2-docker"
+    container_name: jd
+    volumes:
+      - "/opt/data/jd:/opt/downloads"
+      - "/opt/config/jd:/opt/JDownloader/cfg"
