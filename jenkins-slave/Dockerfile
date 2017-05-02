@@ -1,5 +1,5 @@
 FROM centos:7
-
+LABEL maintainer "Benjamin Stein <info@diffus.org>"
 RUN yum install -y epel-release
 RUN yum install -y \
         aria2 \

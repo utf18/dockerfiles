@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Benjamin Stein <b.stein@diffus.org>
+LABEL maintainer "Benjamin Stein <info@diffus.org>"
 RUN rpm --import https://rex.linux-files.org/RPM-GPG-KEY-REXIFY-REPO.CENTOS6
 ADD rex.repo /etc/yum.repos.d/
 RUN yum makecache && \

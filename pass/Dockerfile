@@ -1,5 +1,5 @@
 FROM alpine:3.5
-MAINTAINER Benjamin Stein <info@diffus.org>
+LABEL maintainer "Benjamin Stein <info@diffus.org>"
 ENV GPG_TTY /dev/console
 RUN \
   apk add --no-cache \
