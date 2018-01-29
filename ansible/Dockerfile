@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 LABEL maintainer "Benjamin Stein <info@diffus.org>"
 RUN apt-get update \
     && apt-get -y install ansible \
